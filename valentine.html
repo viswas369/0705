@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Kavya ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Lucida Handwriting', 'Lucida Calligraphy', cursive;
+            background: #FF69B4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            font-size: clamp(1.5em, 8vw, 3em);
+            color: mediumvioletred;
+            margin-bottom: 30px;
+        }
+        .question {
+            font-size: clamp(1.2em, 5vw, 2em);
+            color: mediumvioletred;
+            margin-bottom: 40px;
+        }
+        #page2 .question {
+            color: white;
+        }
+        button {
+            font-size: clamp(1em, 4vw, 1.5em);
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        .yes-btn {
+            background: white;
+            color: mediumvioletred;
+        }
+        .yes-btn:hover {
+            background: #f0f0f0;
+            transform: scale(1.1);
+        }
+        .ofcourse-btn {
+            background: white;
+            color: mediumvioletred;
+        }
+        .ofcourse-btn:hover {
+            background: #f0f0f0;
+            transform: scale(1.1);
+        }
+        .hidden {
+            display: none;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            animation: float 8s linear infinite;
+            opacity: 0.7;
+        }
+        .butterfly {
+            filter: hue-rotate(200deg) saturate(2);
+        }
+        @keyframes float {
+            0% { 
+                top: 110%; 
+                transform: translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% { 
+                top: -10%; 
+                transform: translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        #page1 h1 {
+            color: white;
+        }
+        #page3 h1 {
+            color: white;
+        }
+        #page3 {
+            text-align: left;
+        }
+        #page4 .hearts {
+            display: none;
+        }
+        .watermark {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+            z-index: 10;
+        }
+        .love-note {
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+            color: white;
+            text-align: left;
+            line-height: 1.8;
+            padding: 40px;
+            font-weight: 900;
+        }
+        .gif-image {
+            max-width: 80%;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        .gif-page2 {
+            max-width: 60%;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .gif-page3 {
+            max-width: 60%;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .gif-page4 {
+            max-width: 40%;
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        .gif-image2, .gif-image4 {
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .gif-image2 {
+                display: block;
+                position: fixed;
+                top: 50%;
+                left: 50px;
+                transform: translateY(-50%);
+                width: 300px;
+                z-index: 3;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="watermark">VIYA</div>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <div id="page1">
+            <img src="3.gif" alt="" class="gif-image" id="gifImage">
+            <h1>Heyyy Kavyaaaaaa??</h1>
+            <button class="yes-btn" onclick="goToPage2()">Yesss??</button>
+        </div>
+        
+        <div id="page2" class="hidden">
+            <img src="5.gif" alt="" class="gif-page2" id="gifImage2">
+            <h1>❤️</h1>
+            <p class="question">Will you be my Valentine??? 💖</p>
+            <button class="yes-btn" onclick="goToPage3()">Yes</button>
+            <button class="ofcourse-btn" onclick="goToPage3()">Of course Yes!</button>
+        </div>
+        
+        <div id="page3" class="hidden">
+            <img src="7.gif" alt="" class="gif-page3" id="gifImage4">
+            <h1>Foreverr Valentine for the lifee Wifeyyy?? 💕</h1>
+            <button class="yes-btn" onclick="celebrate()">Foreverrrrr</button>
+        </div>
+        
+        <div id="page4" class="hidden">
+            <img src="10.gif" alt="" class="gif-page4">
+            <div class="love-note">
+                <p>Heyyy kavyammaaaa! Listen you're not just a girlfriend… you're my human, my baby girl, my princess and everything! Even when you're at one end of the country and I'm at the other, my heart somehow stays right next to you! We are DIFFERENT from others! We are unique! Universe loved US nanaaaa! I just always wanna be perfect man to my girl! And not expect much from you! I wanna say this! Im soo proud of youuu bangaram for your efforts to become a DOCTOR! And you will beeeee🩺❤️ and yeah i see my future tomorrow and rest with youu.. beside me.. withh me.. forever! One day will celebrate all thesee together happily and you'll be my WIFEYYY! 🌏💕I'm gonnaa marryyy youuuu🤞🏻💕 i loveeeee youuuu sooooo muchhhh nanaaaa🫂❤️ ummaaahhh ummaahhhhhhh😘</p>
+                <p style="text-align: right; margin-top: 30px;">~ your man vishwasssssss 😗❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToPage2() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+            document.getElementById('gifImage').style.display = 'none';
+        }
+        
+        function goToPage3() {
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('page3').classList.remove('hidden');
+            document.getElementById('gifImage2').style.display = 'none';
+        }
+        
+        function celebrate() {
+            document.getElementById('page3').classList.add('hidden');
+            document.getElementById('page4').classList.remove('hidden');
+            document.getElementById('gifImage4').style.display = 'none';
+            document.getElementById('hearts').style.display = 'none';
+        }
+        
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            const emojis = ['❤️', '💕', '💖', '💗', '💝', '🐼', '🦋'];
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+                    if (emoji === '🦋') heart.classList.add('butterfly');
+                    heart.innerHTML = emoji;
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 5 + 's';
+                    heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                    heartsContainer.appendChild(heart);
+                }, i * 100);
+            }
+        }
+        
+        // Start background animation on page load
+        window.onload = function() {
+            const heartsContainer = document.getElementById('hearts');
+            const emojis = ['❤️', '💕', '💖', '💗', '💝', '🐼', '🦋'];
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+                if (emoji === '🦋') heart.classList.add('butterfly');
+                heart.innerHTML = emoji;
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                heartsContainer.appendChild(heart);
+            }
+        };
+    </script>
+</body>
+</html>
